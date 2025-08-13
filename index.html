@@ -115,22 +115,27 @@
             background: rgba(102,126,234,0.05);
             border: 2px dashed rgba(102,126,234,0.35);
             border-radius: 16px;
-            padding: 24px;
+            padding: 20px;
             margin: 20px 0 24px;
         }
-        .download-grid {
-            display: grid;
-            grid-template-columns: 220px 1fr;
-            gap: 24px;
+        .download-stack {
+            max-width: 560px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
             align-items: center;
+            gap: 16px;
+            text-align: center;
         }
-        .qr-box {
-            width: 220px; height: 220px; border-radius: 12px;
-            background: rgba(74,85,104,0.06);
-            border: 2px solid rgba(74,85,104,0.25);
-            display: flex; align-items: center; justify-content: center;
-            color: #718096; font-weight: 600;
+        .qr-img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            border-radius: 12px;
+            display: block;
         }
+        .download-title { color:#2d3748; margin-top: 4px; }
+        .download-copy { color:#4a5568; line-height:1.6; }
 
         /* Footer */
         .footer { text-align:center; padding: 15px; background: rgba(102,126,234,0.1); margin-top: 20px; }
@@ -181,29 +186,19 @@
 
     <!-- Desktop tabs (hidden on mobile) -->
     <div class="tabs" role="tablist" aria-label="Keyboard tabs">
-        <div class="tab active" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Script</div>
-        <div class="tab" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
+        <div class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Script</div>
+        <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
         <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'layout')">⌨️ Keyboard Layout</div>
         <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'about')">ℹ️ About Kaithi Keyboard</div>
     </div>
 
     <!-- Download Tab -->
     <div id="download" class="tab-content active" role="tabpanel" aria-labelledby="download">
-        <div class="download-wrap">
-            <div class="download-grid">
-                <div class="qr-box" aria-label="QR code placeholder">
-                    <!-- Replace this with your QR image if available -->
-                        <img src="./assets/kaithi-download-qr.png" alt="QR">
-                    
-                </div>
-                <div>
-                    <h3 style="color:#2d3748; margin-bottom:10px;">Get the Kaithi Script Package</h3>
-                    <p style="color:#4a5568; line-height:1.6; margin-bottom:16px;">
-                        Scan the QR or use the button below to download the Kaithi script package for quick installation.
-                    </p>
-                    <a class="download-button" href="https://drive.google.com/file/d/1s9s7wM2NMTLhfqfXHJ3ExNYFQLrhRCHT/view?usp=sharing" target="_blank" rel="noopener">Download from Google Drive</a>
-                </div>
-            </div>
+        <div class="download-wrap download-stack">
+            <img class="qr-img" src="./assets/kaithi-download-qr.png" alt="Download Kaithi Script QR" width="320" height="320">
+            <h3 class="download-title">Get the Kaithi Script Package</h3>
+            <p class="download-copy">Scan the QR or use the button below to download the Kaithi script package for quick installation.</p>
+            <a class="download-button" href="https://drive.google.com/file/d/1s9s7wM2NMTLhfqfXHJ3ExNYFQLrhRCHT/view?usp=sharing" target="_blank" rel="noopener">Download from Google Drive</a>
         </div>
     </div>
 
@@ -475,14 +470,9 @@ function navTo(event, tabName) {
     }
 }
 
-// On load: if mobile, open Download tab first
+// On load: always open Download tab first
 (function(){
-    const isMobile = window.matchMedia('(max-width: 768px)').matches;
-    if (isMobile) {
-        showTab(null, 'download');
-    } else {
-        showTab(null, 'installation');
-    }
+    showTab(null, 'download');
 })();
 </script>
 </body>
