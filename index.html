@@ -19,6 +19,7 @@
         .header h1 { color: #2d3748; font-size: 2.5em; font-weight: 700; margin-bottom: 10px; }
         .header p { color: #718096; font-size: 1.2em; }
 
+        /* Desktop tabs */
         .tabs { display: flex; background: #2d3748; border-bottom: 2px solid #4a5568; }
         .tab {
             flex: 1; padding: 20px; text-align: center; background: #4a5568; color: #e2e8f0;
@@ -108,37 +109,40 @@
         }
         .about-hero h3 { color: #2d3748; margin-bottom: 8px; }
         .about-hero p { color: #4a5568; line-height: 1.6; }
-/* Download Tab Styles */
-.download-wrap {
-  background: rgba(102,126,234,0.05);
-  border: 2px dashed rgba(102,126,234,0.35);
-  border-radius: 16px;
-  padding: 24px;
-  margin: 20px 0 24px;
-}
-.download-grid {
-  display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 24px;
-  align-items: center;
-}
-.qr-box {
-  width: 220px;
-  height: 220px;
-  border-radius: 12px;
-  background: rgba(74,85,104,0.06);
-  border: 2px solid rgba(74,85,104,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #718096;
-  font-weight: 600;
-}
-@media (max-width: 768px) {
-  .download-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
+        /* Download Tab Styles */
+        .download-wrap {
+            background: rgba(102,126,234,0.05);
+            border: 2px dashed rgba(102,126,234,0.35);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0 24px;
+        }
+        .download-grid {
+            display: grid;
+            grid-template-columns: 220px 1fr;
+            gap: 24px;
+            align-items: center;
+        }
+        .qr-box {
+            width: 220px; height: 220px; border-radius: 12px;
+            background: rgba(74,85,104,0.06);
+            border: 2px solid rgba(74,85,104,0.25);
+            display: flex; align-items: center; justify-content: center;
+            color: #718096; font-weight: 600;
+        }
+
+        /* Footer */
+        .footer { text-align:center; padding: 15px; background: rgba(102,126,234,0.1); margin-top: 20px; }
+        .footer p { color:#4a5568; font-size: 0.9em; }
+
+        /* MOBILE EXPERIENCE */
+        .mobile-bar { display: none; background:#2d3748; color:#e2e8f0; padding: 12px 16px; align-items:center; justify-content: space-between; }
+        .mobile-title { font-weight: 700; }
+        .hamburger { background: transparent; border: 2px solid #4a5568; color:#e2e8f0; border-radius:8px; padding:8px 10px; font-weight:700; }
+        .drawer { display:none; background:#4a5568; color:#e2e8f0; }
+        .drawer a { display:block; padding:14px 16px; text-decoration:none; color:#e2e8f0; border-top:1px solid #2d3748; }
+        .drawer a.active { background:#667eea; color:#fff; }
 
         @media (max-width: 768px) {
             .container { margin: 10px; border-radius: 15px; }
@@ -146,47 +150,62 @@
             .header h1 { font-size: 2em; }
             .tab-content { padding: 20px; }
             .keyboard { overflow-x: auto; }
-        }
 
+            /* Hide desktop tabs and show mobile bar */
+            .tabs { display: none; }
+            .mobile-bar { display:flex; }
+            .drawer.show { display:block; }
+
+            .download-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
-        <h1>𑂍𑂨𑂟𑂲 Kaithi Phonetic Keyboard</h1>
-        <p>Romanized Keyboard Layout</p>
+        <h1>कैथी Kaithi Phonetic Keyboard</h1>
+        <p>Romanized Desktop Layout • Version 1.0</p>
     </div>
 
-<div class="tabs" role="tablist" aria-label="Keyboard tabs">
-  <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Script</div>
-  <div class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
-  <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'layout')">⌨️ Keyboard Layout</div>
-  <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'about')">ℹ️ About Kaithi Keyboard</div>
-</div>
-<!-- Download Tab -->
-<div id="download" class="tab-content active" role="tabpanel" aria-labelledby="download">
-  <div class="download-wrap">
-    <div class="download-grid">
-      <div class="qr-box" aria-label="QR code placeholder">
-        <!-- Optional: replace this box with your QR image -->
-        <img src="kaithi-download-qr.png" alt="Download Kaithi Script QR" width="220" height="220">
-       
-      </div>
-      <div>
-        <h3 style="color:#2d3748; margin-bottom:10px;">Get the Kaithi Script Package</h3>
-        <p style="color:#4a5568; line-height:1.6; margin-bottom:16px;">
-          Scan the QR or use the button below to download the Kaithi script package for quick installation.
-        </p>
-        <a class="download-button"
-           href="https://drive.google.com/file/d/1s9s7wM2NMTLhfqfXHJ3ExNYFQLrhRCHT/view?usp=sharing"
-           target="_blank" rel="noopener">
-          Download from Google Drive
-        </a>
-      </div>
+    <!-- Mobile top bar + hamburger (visible on small screens) -->
+    <div class="mobile-bar" role="navigation" aria-label="Mobile navigation">
+        <span class="mobile-title">Kaithi Keyboard</span>
+        <button class="hamburger" aria-expanded="false" aria-controls="mobile-drawer" onclick="toggleMenu(this)">☰ Menu</button>
     </div>
-  </div>
-</div>
+    <nav id="mobile-drawer" class="drawer" aria-hidden="true">
+        <a href="#download" data-tab="download" onclick="navTo(event,'download')">⬇️ Download Kaithi Script</a>
+        <a href="#installation" data-tab="installation" onclick="navTo(event,'installation')">📥 Installation</a>
+        <a href="#layout" data-tab="layout" onclick="navTo(event,'layout')">⌨️ Keyboard Layout</a>
+        <a href="#about" data-tab="about" onclick="navTo(event,'about')">ℹ️ About Kaithi Keyboard</a>
+    </nav>
 
+    <!-- Desktop tabs (hidden on mobile) -->
+    <div class="tabs" role="tablist" aria-label="Keyboard tabs">
+        <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Script</div>
+        <div class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
+        <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'layout')">⌨️ Keyboard Layout</div>
+        <div class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'about')">ℹ️ About Kaithi Keyboard</div>
+    </div>
+
+    <!-- Download Tab -->
+    <div id="download" class="tab-content active" role="tabpanel" aria-labelledby="download">
+        <div class="download-wrap">
+            <div class="download-grid">
+                <div class="qr-box" aria-label="QR code placeholder">
+                    <!-- Replace this with your QR image if available -->
+                    <img src="assets/kaithi-download-qr.png" alt="Download Kaithi Script QR" width="220" height="220">
+                    
+                </div>
+                <div>
+                    <h3 style="color:#2d3748; margin-bottom:10px;">Get the Kaithi Script Package</h3>
+                    <p style="color:#4a5568; line-height:1.6; margin-bottom:16px;">
+                        Scan the QR or use the button below to download the Kaithi script package for quick installation.
+                    </p>
+                    <a class="download-button" href="https://drive.google.com/file/d/1s9s7wM2NMTLhfqfXHJ3ExNYFQLrhRCHT/view?usp=sharing" target="_blank" rel="noopener">Download from Google Drive</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Installation Tab -->
     <div id="installation" class="tab-content" role="tabpanel" aria-labelledby="installation">
@@ -357,9 +376,7 @@
         </div>
     </div>
 
-<!-- ... existing code above remains unchanged ... -->
-
-    <!-- NEW: About Tab -->
+    <!-- About Tab -->
     <div id="about" class="tab-content" role="tabpanel" aria-labelledby="about">
         <div class="about-hero">
             <h3>About Kaithi Keyboard</h3>
@@ -396,7 +413,6 @@
                     <li>Current version: <strong>1.0</strong></li>
                 </ul>
             </div>
-           
         </div>
 
         <!-- Footer Band -->
@@ -411,37 +427,63 @@
         </div>
     </div>
 
-<!-- ... existing code below remains unchanged ... -->
-<!-- Footer -->
-    <div class="footer" style="text-align:center; padding: 15px; background: rgba(102,126,234,0.1); margin-top: 20px;">
-        <p style="color:#4a5568; font-size: 0.9em;">&copy; Council for Diversity and Innovation 2025</p>
+    <!-- Footer -->
+    <div class="footer">
+        <p>&copy; Council for Diversity and Innovation 2025</p>
     </div>
-
+</div>
 
 <script>
+function clearActiveTabs() {
+    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+    document.querySelectorAll('.tabs .tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+    document.querySelectorAll('#mobile-drawer a').forEach(a => a.classList.remove('active'));
+}
 function showTab(evt, tabName) {
-    // Hide all tab contents
-    const contents = document.querySelectorAll('.tab-content');
-    contents.forEach(c => c.classList.remove('active'));
-
-    // Remove active class from all tabs
-    const tabs = document.querySelectorAll('.tab');
-    tabs.forEach(t => {
-        t.classList.remove('active');
-        t.setAttribute('aria-selected', 'false');
-    });
-
-    // Show selected content
+    clearActiveTabs();
     const panel = document.getElementById(tabName);
     if (panel) panel.classList.add('active');
 
-    // Activate clicked tab
-    if (evt && evt.currentTarget) {
-        evt.currentTarget.classList.add('active');
-        evt.currentTarget.setAttribute('aria-selected', 'true');
+    // desktop tabs
+    const indexMap = { download:0, installation:1, layout:2, about:3 };
+    const tabs = document.querySelectorAll('.tabs .tab');
+    if (tabs[indexMap[tabName]]) {
+        tabs[indexMap[tabName]].classList.add('active');
+        tabs[indexMap[tabName]].setAttribute('aria-selected','true');
+    }
+
+    // mobile drawer highlight
+    const link = document.querySelector(`#mobile-drawer a[data-tab="${tabName}"]`);
+    if (link) link.classList.add('active');
+}
+function toggleMenu(btn) {
+    const drawer = document.getElementById('mobile-drawer');
+    const isOpen = drawer.classList.toggle('show');
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+    btn.setAttribute('aria-expanded', String(isOpen));
+}
+function navTo(event, tabName) {
+    event.preventDefault();
+    showTab(null, tabName);
+    // close drawer after selection
+    const drawer = document.getElementById('mobile-drawer');
+    if (drawer.classList.contains('show')) {
+        drawer.classList.remove('show');
+        drawer.setAttribute('aria-hidden','true');
+        const btn = document.querySelector('.hamburger');
+        if (btn) btn.setAttribute('aria-expanded','false');
     }
 }
 
+// On load: if mobile, open Download tab first
+(function(){
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    if (isMobile) {
+        showTab(null, 'download');
+    } else {
+        showTab(null, 'installation');
+    }
+})();
 </script>
 </body>
 </html>
