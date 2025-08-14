@@ -603,9 +603,9 @@
     if (panel) panel.classList.add('active');
 
     // desktop tab highlight (ORDER MUST MATCH .tabs DOM)
-    const indexMap = { installation:0, download:1, layout:2, about:3 };
+    const indexMap = { installation:0, download:1, layout:2, 'phone-layout':3, about:4 };
     const tabs = document.querySelectorAll('.tabs .tab');
-    if (tabs[indexMap[tabName]]) {
+    if (tabs[indexMap[tabName]] !== undefined) {
       tabs[indexMap[tabName]].classList.add('active');
       tabs[indexMap[tabName]].setAttribute('aria-selected','true');
     }
@@ -625,7 +625,6 @@
   function navTo(event, tabName) {
     event.preventDefault();
     showTab(null, tabName);
-    // close drawer after selection
     const drawer = document.getElementById('mobile-drawer');
     if (drawer.classList.contains('show')) {
       drawer.classList.remove('show');
@@ -635,12 +634,9 @@
     }
   }
 
-
-
   // On load: open Installation tab first
-(function(){
-  showTab(null, 'installation');
-})();
+  (function(){ showTab(null, 'installation'); })();
 </script>
+
 </body>
 </html>
