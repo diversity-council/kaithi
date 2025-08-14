@@ -139,8 +139,18 @@
     .download-copy { color:#4a5568; line-height:1.6; }
 
     /* Footer */
-    .footer { text-align:center; padding: 15px; background: rgba(102,126,234,0.1); margin-top: 20px; }
-    .footer p { color:#4a5568; font-size: 0.9em; }
+    .footer {
+  text-align: center;
+  padding: 15px;
+  background: #e8eafa; /* Updated background color */
+  margin-top: 20px;
+}
+
+.footer p {
+  color: #4a5568; /* Keep white text */
+  font-size: 1em;
+}
+
 
     /* MOBILE EXPERIENCE */
     .mobile-bar { display: none; background:#2d3748; color:#e2e8f0; padding: 12px 16px; align-items:center; justify-content: space-between; }
@@ -172,7 +182,8 @@
 <body>
 <div class="container">
   <div class="header">
-    <h1 class="kaithitt">𑂍𑂨𑂟𑂲</class> | Kaithi Phonetic Keyboard</h1>
+<h1 class="kaithit"><span aria-hidden="true">𑂍𑂨𑂟𑂲</span> | Kaithi Phonetic Keyboard</h1>
+
     <p>Romanized Desktop Layout • Version 1.0.2 • Council for Diversity and Innovation</p>
   </div>
 
@@ -272,7 +283,7 @@
   </div>
 
   <!-- Layout Tab -->
-  <div id="layout" class="tab-content" role="tabpanel" aria-labelledby="tab-layout">
+  <div id="layout" class="tab-content" role="tabpanel" aria-labelledby="tab-desktop-layout">
     <div class="legend">
       <div class="legend-item"><div class="legend-color consonant"></div><span>Consonants</span></div>
       <div class="legend-item"><div class="legend-color vowel"></div><span>Vowels</span></div>
@@ -578,12 +589,14 @@
         </ul>
       </div>
     </div>
-
+   </div> <!-- end .usage-grid -->
+  </div> <!-- end #phone-layout -->
   <!-- Footer -->
-  <div class="footer">
-    <p>&copy; Council for Diversity and Innovation 2025</p>
+<div class="footer">
+    <p>&copy; <a href="https://diversity.org.in/" target="_blank" rel="noopener noreferrer">Council for Diversity and Innovation 2025</a></p>
   </div>
-</div>
+</div> <!-- end .container -->
+
 
 <script>
   function clearActiveTabs() {
