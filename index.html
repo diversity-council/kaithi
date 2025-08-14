@@ -173,7 +173,7 @@
 <div class="container">
   <div class="header">
     <h1 class="kaithitt">𑂍𑂨𑂟𑂲</class> | Kaithi Phonetic Keyboard</h1>
-    <p>Romanized Desktop Layout • Version 1.0 • Council for Diversity and Innovation</p>
+    <p>Romanized Desktop Layout • Version 1.0.2 • Council for Diversity and Innovation</p>
   </div>
 
   <!-- Mobile top bar + hamburger (visible on small screens) -->
@@ -181,20 +181,24 @@
     <span class="mobile-title">Kaithi Keyboard</span>
     <button class="hamburger" aria-expanded="false" aria-controls="mobile-drawer" onclick="toggleMenu(this)">☰ Menu</button>
   </div>
-  <nav id="mobile-drawer" class="drawer" aria-hidden="true">
-    <a href="#download" data-tab="download" onclick="navTo(event,'download')">⬇️ Download Kaithi Keyboard</a>
-    <a href="#installation" data-tab="installation" onclick="navTo(event,'installation')">📥 Installation</a>
-    <a href="#layout" data-tab="layout" onclick="navTo(event,'layout')">⌨️ Keyboard Layout</a>
-    <a href="#about" data-tab="about" onclick="navTo(event,'about')">ℹ️ About Kaithi Keyboard</a>
-  </nav>
+<nav id="mobile-drawer" class="drawer" aria-hidden="true">
+  <a href="#download" data-tab="download" onclick="navTo(event,'download')">⬇️ Download Kaithi Keyboard</a>
+  <a href="#installation" data-tab="installation" onclick="navTo(event,'installation')">📥 Installation</a>
+  <a href="#layout" data-tab="layout" onclick="navTo(event,'layout')">🖥️ Desktop Layout</a>
+  <a href="#phone-layout" data-tab="phone-layout" onclick="navTo(event,'phone-layout')">📱 Phone Layout</a>
+  <a href="#about" data-tab="about" onclick="navTo(event,'about')">ℹ️ About Kaithi Keyboard</a>
+</nav>
+
 
   <!-- Desktop tabs (hidden on mobile) -->
-  <div class="tabs" role="tablist" aria-label="Keyboard tabs">
-    <div id="tab-installation" class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
-    <div id="tab-download" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Keyboard</div>
-    <div id="tab-layout" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'layout')">⌨️ Keyboard Layout</div>
-    <div id="tab-about" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'about')">ℹ️ About Kaithi Keyboard</div>
-  </div>
+<div class="tabs" role="tablist" aria-label="Keyboard tabs">
+  <div id="tab-installation" class="tab active" role="tab" aria-selected="true" tabindex="0" onclick="showTab(event,'installation')">📥 Installation</div>
+  <div id="tab-download" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'download')">⬇️ Download Kaithi Keyboard</div>
+  <div id="tab-desktop-layout" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'layout')">🖥️ Desktop Layout</div>
+  <div id="tab-phone-layout" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'phone-layout')">📱 Phone Layout</div>
+  <div id="tab-about" class="tab" role="tab" aria-selected="false" tabindex="0" onclick="showTab(event,'about')">ℹ️ About Kaithi Keyboard</div>
+</div>
+
 
   <!-- Installation Tab -->
   <div id="installation" class="tab-content active" role="tabpanel" aria-labelledby="tab-installation">
@@ -417,7 +421,7 @@
         <ul>
           <li>Distributed as <strong>.kmp</strong> (Keyman Package)</li>
           <li>Includes keyboard, icons, documentation</li>
-          <li>Current version: <strong>1.0</strong></li>
+          <li>Current version: <strong>1.0.2</strong></li>
         </ul>
       </div>
     </div>
@@ -433,6 +437,147 @@
       </p>
     </div>
   </div>
+   <!-- Phone Layout Tab -->
+  <div id="phone-layout" class="tab-content" role="tabpanel" aria-labelledby="tab-phone-layout">
+    <div class="about-hero">
+      <h3>🤳 Kaithi Touch Keyboard — Step-by-Step Guide</h3>
+      <p>Here's a simple, beginner-friendly guide for typing with your <strong>Kaithi touch keyboard</strong> (works the same on phone and tablet).</p>
+    </div>
+
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h4>🎯 Two Things to Remember</h4>
+        <ul>
+          <li><strong>Layers:</strong> there are only <strong>two</strong>—<strong>default</strong> and <strong>shift</strong>. Tap <strong>Shift</strong> (bottom-left on row 4) to toggle between them.</li>
+          <li><strong>Long-press:</strong> press-and-hold a key to see more options (a small pop-up list).</li>
+        </ul>
+        <p style="margin-top: 15px; color: #667eea; font-style: italic;">That's it. If you can switch layers and long-press, you can type everything in this layout.</p>
+      </div>
+    </div>
+
+    <div class="about-hero" style="background: rgba(56,178,172,0.08); border-color: rgba(56,178,172,0.25);">
+      <h3>📱 What's on Each Layer (Quick Tour)</h3>
+      
+      <h4 style="color: #38b2ac; margin-top: 20px;">Default Layer (Everyday Typing)</h4>
+      <ul style="margin: 10px 0; padding-left: 20px; color: #4a5568;">
+        <li><strong>Consonants</strong>: rows 2–4 (e.g., 𑂍, 𑂏, 𑂩, 𑂥…)</li>
+        <li><strong>Vowel signs (matras)</strong>: row 2 and row 3 (e.g., 𑂰 ā, 𑂱 i, 𑂳 u, 𑂵 e, 𑂷 o …)</li>
+        <li><strong>Virama (halant) 𑂹</strong>: row 3 on the ":\`" key — use it for conjuncts and to kill the inherent "a"</li>
+        <li><strong>Sentence mark (danda) 𑃀</strong>: row 4 on the <strong>period</strong> key</li>
+      </ul>
+      
+      <h4 style="color: #38b2ac; margin-top: 20px;">Shift Layer (Independent Vowels + Symbols)</h4>
+      <ul style="margin: 10px 0; padding-left: 20px; color: #4a5568;">
+        <li><strong>Independent vowels</strong>: 𑂃 𑂄 𑂅 𑂆 𑂇 𑂈 𑂉 𑂊 𑂋 𑂌 (rows 3–4)</li>
+        <li><strong>Section marks</strong>: top row has <strong>𑂾</strong> (section) and <strong>𑂿</strong> (double section)</li>
+        <li><strong>Number sign 𑂽</strong>: top row shows <strong>𑂽</strong>; <strong>long-press it</strong> for <strong>𑃍</strong> (number sign above)</li>
+      </ul>
+    </div>
+
+    <div class="usage-grid">
+      <div class="usage-card">
+        <h4>✍️ Consonant + Vowel (Very Important Rule)</h4>
+        <p style="margin-bottom: 15px; color: #667eea;">In Kaithi, a consonant carries an <strong>inherent "a"</strong>. To change it, type the <strong>consonant first</strong>, then the <strong>vowel sign</strong> (even if that sign displays to the left).</p>
+        
+        <p style="margin-bottom: 10px; font-weight: 600;">Examples with 𑂍 (ka):</p>
+        <ul>
+          <li><strong>ka</strong> → tap 𑂍 (inherent "a")</li>
+          <li><strong>kā</strong> → 𑂍, then 𑂰 (ā)</li>
+          <li><strong>ki</strong> → 𑂍, then 𑂱 (i)</li>
+          <li><strong>kī</strong> → 𑂍, then 𑂲 (ī) <em>(on shift layer)</em></li>
+          <li><strong>ku</strong> → 𑂍, then 𑂳 (u)</li>
+          <li><strong>ke</strong> → 𑂍, then 𑂵 (e)</li>
+          <li><strong>ko</strong> → 𑂍, then 𑂷 (o)</li>
+        </ul>
+        <p style="margin-top: 15px; font-style: italic; color: #ed8936;"><strong>Tip:</strong> don't try to place the sign visually. Just type consonant → sign; the keyboard will position it.</p>
+      </div>
+
+      <div class="usage-card">
+        <h4>🔤 Words That Start With a Vowel</h4>
+        <p style="margin-bottom: 10px;">Switch to <strong>shift</strong> and tap an <strong>independent vowel</strong>:</p>
+        <ul>
+          <li>𑂃 (a), 𑂄 (ā), 𑂅 (i), 𑂆 (ī)</li>
+          <li>𑂇 (u), 𑂈 (ū), 𑂉 (e), 𑂊 (ai)</li>
+          <li>𑂋 (o), 𑂌 (au)</li>
+        </ul>
+      </div>
+
+      <div class="usage-card">
+        <h4>🔗 Join Consonants / Remove the "a" (Virama 𑂹)</h4>
+        <ul>
+          <li>To <strong>suppress</strong> the inherent vowel: <strong>consonant + 𑂹</strong> → dead consonant (e.g., 𑂍 + 𑂹 → 𑂍𑂹)</li>
+          <li>To make a <strong>conjunct/cluster</strong>: <strong>consonant + 𑂹 + consonant</strong></li>
+        </ul>
+        <p style="margin-top: 10px; font-weight: 600;">Examples:</p>
+        <ul>
+          <li>𑂍 + 𑂹 + 𑂩 → "kra"</li>
+          <li>𑂞 + 𑂹 + 𑂫 → "tva"</li>
+          <li>𑂢 + 𑂹 + 𑂖 → "nya"</li>
+        </ul>
+      </div>
+
+      <div class="usage-card">
+        <h4>🎵 Nasal and Breath Marks</h4>
+        <ul>
+          <li>Tap <strong>𑂀</strong> (candrabindu)</li>
+          <li><strong>Long-press 𑂀</strong> for <strong>𑂁</strong> (anusvara) and <strong>𑂂</strong> (visarga)</li>
+        </ul>
+      </div>
+
+      <div class="usage-card">
+        <h4>📝 Punctuation & Special Signs</h4>
+        <ul>
+          <li><strong>Danda 𑃀</strong>: tap the <strong>period</strong> key</li>
+          <li><strong>Double danda 𑃁 / Abbrev 𑂻 / Enumeration 𑂼</strong>: <strong>long-press</strong> the period key</li>
+          <li><strong>Section marks</strong>: on <strong>shift</strong> top row—tap <strong>𑂾</strong> (section) or <strong>𑂿</strong> (double section)</li>
+          <li><strong>Number signs</strong>: on <strong>shift</strong> top row—tap <strong>𑂽</strong>; <strong>long-press</strong> it for <strong>𑃍</strong></li>
+        </ul>
+      </div>
+
+      <div class="usage-card">
+        <h4>📍 Where to Find Long-Press Menus</h4>
+        <p style="margin-bottom: 10px; font-weight: 600;">Default:</p>
+        <ul>
+          <li><strong>𑂀</strong> → hold for <strong>𑂁</strong>, <strong>𑂂</strong></li>
+          <li><strong>𑃀</strong> (period) → hold for <strong>𑃁</strong>, <strong>𑂻</strong>, <strong>𑂼</strong></li>
+        </ul>
+        <p style="margin: 15px 0 10px 0; font-weight: 600;">Shift:</p>
+        <ul>
+          <li><strong>𑂽</strong> (top row) → hold for <strong>𑃍</strong></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="about-hero" style="background: rgba(237,137,54,0.08); border-color: rgba(237,137,54,0.25);">
+      <h3>🏃‍♂️ Practice Mini-Drills (2 minutes)</h3>
+      <ol style="margin: 10px 0; padding-left: 20px; color: #4a5568;">
+        <li>Type <strong>kā</strong> → 𑂍 then 𑂰</li>
+        <li>Type <strong>kī</strong> → 𑂍 → <strong>Shift</strong> → 𑂲</li>
+        <li>Type <strong>kra</strong> → 𑂍 + 𑂹 + 𑂩</li>
+        <li>Type <strong>𑃀</strong> then <strong>𑃁</strong> → (period) then <strong>long-press</strong> period</li>
+        <li>Type <strong>section</strong> → <strong>Shift</strong> → tap <strong>𑂾</strong></li>
+        <li>Type <strong>number sign above</strong> → <strong>Shift</strong> → tap <strong>𑂽</strong> and <strong>long-press</strong> for <strong>𑃍</strong></li>
+      </ol>
+    </div>
+
+    <div class="usage-grid">
+      <div class="usage-card" style="background: rgba(102,126,234,0.05); border-color: #667eea;">
+        <h4>🔧 Troubleshooting (Quick Fixes)</h4>
+        <ul>
+          <li><strong>I see a □ box in a pop-up or in typed text.</strong><br>That app/device font doesn't have the Kaithi glyph. Use the Keyman app with your packaged Kaithi font, or enable "Use keyboard font" if available in settings.</li>
+          <li><strong>Nothing happens when I tap a key.</strong><br>Make sure you're on the <strong>right layer</strong> (default vs. shift). If you need an <strong>independent vowel</strong>, it's on <strong>shift</strong>.</li>
+          <li><strong>The vowel sign looks like it appears before the letter.</strong><br>That's normal. You still type <strong>consonant → sign</strong>; shaping takes care of the visual position.</li>
+        </ul>
+      </div>
+
+      <div class="usage-card" style="background: rgba(56,178,172,0.05); border-color: #38b2ac;">
+        <h4>📋 Quick Reference (At a Glance)</h4>
+        <ul>
+          <li><strong>Shift</strong> → independent vowels (𑂃–𑂌), section marks (𑂾/𑂿), number signs (tap 𑂽, long-press for 𑃍)</li>
+          <li><strong>Default</strong> → consonants, vowel signs, <strong>𑂹</strong> (virama), <strong>𑃀</strong> (danda; long-press for 𑃁/𑂻/𑂼), <strong>𑂀</strong> (long-press for 𑂁/𑂂)</li>
+        </ul>
+      </div>
+    </div>
 
   <!-- Footer -->
   <div class="footer">
